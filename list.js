@@ -6,16 +6,29 @@ function load() {
     if (this.readyState == 4 && this.status == 200) {
       response = JSON.parse(this.responseText);
 
-      var list = "";
+      var ull = document.getElementById("list");
       for (let i = 0; i < response.length; i++) {
+          const list = document.createElement("li");
+          list.classList.add(
+            "list-group-item", "d-flex", "justify-content-between", "align-items-center"
+          );
+          const checkbox = document.createElement("input");
+          checkbox.setAttribute("type", "checkbox");
+          checkbox.setAttribute("onchange","check()");
+          const label = document.createElement("label");
+          label.classList.add("strikethrough");  
         if (response[i].completed === true) {
-          list += `<li class="list-group-item d-flex justify-content-between align-items-center"><input  type="checkbox" checked disabled><label  class="strikethrough" >${response[i].title}</label></li>`;
+          label.innerHTML = response[i].title;
+          checkbox.setAttribute("disabled", "true");
+          checkbox.setAttribute("checked", "true");
           disabled += 1;
         } else {
-          list += `<li class="list-group-item d-flex justify-content-between align-items-center"><input  type="checkbox" onchange="check()"><label  class="strikethrough" >${response[i].title}</label></li>`;
+          label.innerHTML = response[i].title;
         }
+        list.appendChild(checkbox);
+        list.appendChild(label);
+        ull.appendChild(list);
       }
-      document.getElementById("list").innerHTML = list;
     }
   };
   xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos", true);

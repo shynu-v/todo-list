@@ -191,6 +191,7 @@ body {
   padding-right: 10px;
 }
 input[type="checkbox"] {
+  flex: none;
   height: 15px;
   width: 15px;
 }
@@ -230,14 +231,33 @@ input[type="checkbox"]:checked + label.strikethrough {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
+   
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.075); 
+  background: rgba(136, 136, 136, 0.377); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(85, 85, 85, 0.767); 
+  background: rgba(85, 85, 85, 0.829);
+}
+.rounded{
+  background-color: white;
+  padding: 8px;
+  width: 60%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.add-btn{
+  background-color: white;
+  border: none;
+  width: 10%;
+}
+#textvalue{
+  border: none;
+  width: 88%;
+}
+#textvalue:focus{
+  outline: none;
 }

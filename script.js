@@ -8,6 +8,7 @@ const check = (username, password, callback) => {
   if (username == "admin" && password == "12345") {
     return callback();
   } else {
+    alert("Invalid Username or password.");
     return false;
   }
 };
