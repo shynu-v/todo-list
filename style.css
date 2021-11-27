@@ -211,15 +211,15 @@ input[type="checkbox"]:checked + label.strikethrough {
 }
 
 .myli {
-  width: 60%;
+  width: 70%;
   overflow-y: scroll;
-  height: 500px;
+  height: 450px;
 }
 @media screen and (max-width: 767px) {
   .myli {
-    width: 80%;
+    width: 100%;
     overflow-y: scroll;
-    height: 500px;
+    height: 450px;
   }
 }
 
@@ -260,4 +260,16 @@ input[type="checkbox"]:checked + label.strikethrough {
 }
 #textvalue:focus{
   outline: none;
+}
+
+.closebtn{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  left: 100%;
+}
+.closebtn li{
+  font-size: 15px;
+  padding: 1px;
+  padding-left: 2px;
 }
